@@ -8,7 +8,7 @@ const initialState = {
   // Array of characters, Boolean fetching, null error.
   characters: [],
   error: null,
-  isFetching: false,
+  fetching: false,
 };
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -17,7 +17,7 @@ export const charsReducer = (state = initialState, action) => {
       return {
         ...state,
         error: '',
-        isFetching: true
+        fetching: true
       };
 
     case FETCH_CHAR_SUCCESS:
@@ -25,14 +25,14 @@ export const charsReducer = (state = initialState, action) => {
         ...state,
         characters: action.payload.results,
         error: '',
-        isFetching: false
+        fetching: false
       };
 
     case FETCH_CHAR_FAIL:    
       return {
         ...state,
         error: action.payload,
-        isFetching: false
+        fetching: false
       }
 
     default:
