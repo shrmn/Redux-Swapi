@@ -12,7 +12,7 @@ const initialState = {
 };
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
-    
+
     case FETCH_CHAR_START:
       return {
         ...state,
@@ -23,7 +23,7 @@ export const charsReducer = (state = initialState, action) => {
     case FETCH_CHAR_SUCCESS:
       return {
         ...state,
-        characters: action.payload,
+        characters: action.payload.results,
         error: '',
         isFetching: false
       };
